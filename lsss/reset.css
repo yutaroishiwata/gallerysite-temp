@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+body {
+    line-height:1;
+    margin:0;
+}
+
+h1, h2, h3, h4, h5, h6, p ,dl,dd{
+	margin: 0;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,menu,nav,section,main {
+    display:block;
+}
+
+ul, li{
+	list-style:none;
+	padding:0;
+	margin:0;
+    padding:0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+
+
+i, cite, em, var, address, dfn {
+    font-style: normal;
+}
+
+
+/*フォーム*/
+input,textarea,select,button{
+    outline:0;/*青枠なし*/
+    border-radius: 0;
+}
+
+input {border-style: none;}
+
+
+

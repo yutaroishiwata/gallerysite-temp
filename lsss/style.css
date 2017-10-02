@@ -1,0 +1,1073 @@
+/*
+Theme Name:  Life Style Shop Summary
+Author:      Ishiwata
+Description: 自作テーマ
+Version:    1.0.0
+*/
+@charset "utf-8";
+/* CSS Document */
+
+html,body{
+	font-family:
+	'Cantarell',"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+	"メイリオ", "Meiryo", "MS PGothic", sans-serif;
+	color:#666;
+    /*footer固定用*/
+    height:100%;
+}
+
+/*------------------------------------------------------------------全体定義*/
+
+main{
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 4.5% 30px 30px 30px;
+}
+
+img{/*リキッドの時にかけておくと便利な指定*/
+	max-width: 100%;
+	height:auto;
+}
+
+/*
+img:hover{
+	opacity: 0.7;
+	transition:.2s ease-in;
+}
+*/
+
+p{
+	line-height:1.4;
+	margin-bottom:1em;
+}
+
+a{
+	color:#666;
+	transition:.2s ease-in;
+	text-decoration:none;
+}
+
+a:hover{color:#B3B3B3;}
+
+/*
+pre{
+	margin-bottom:20px;
+	background-color:#EEE;
+	border:solid 2px #DDD;
+	padding:2%;
+	overflow-x:scroll;
+	white-space:nowrap;
+}
+*/
+
+h1{}
+
+h2{}
+
+h3{}
+
+/*----------------------------------------------------------------汎用クラス*/
+
+
+#main_content{
+    box-sizing: border-box;
+}
+
+.wrap{
+    width: 100%;
+	max-width: 1200px;/*最大1200pxまでしか広がらない*/
+	margin:0 auto;
+}
+
+/*footer固定用*/
+#wrapper{
+    width: 100%;
+    position: relative;
+    height:auto !important; /*IE6対策*/
+    height: 100%; /*IE6対策*/
+    min-height: 100%;
+}
+
+.clearfix:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+#title_base{
+    
+}
+
+#title_base h2{/*エリアから探す、人気エリア*/
+    display: inline-block;
+	font-size: 1.2em;
+    vertical-align: bottom;
+	color: #000;
+}
+
+
+/*
+.post_container:hover{サムネイルとタイトルをまとめて透過
+	background-color: #dedede;
+	transition:.2s ease-in;
+}
+*/
+
+.post_container h3{
+    font-size: 0.95em;
+    text-align: center;
+    padding: 12px 10px 0;
+}
+
+/*アーカイブmargin調整*/
+.wrap_posts{margin: 0 35px !important;}/*Gallery・Brand・地方アーカイブページ・関連記事用*/
+
+/*ページ左右margin調整*/
+.wrap_neg{margin: 0 -35px;}/*Gallery・Brand・地方アーカイブページ・関連記事用*/
+
+/*グリッドシステム用ソースcolumn*/
+.col_full{width:100%;}
+.col_1_3{/*3列アーカイブページ用*/
+    width:33%;
+    display: inline-block; /* インラインブロック化 */
+    vertical-align: top;   /* 上端を揃える */
+}
+.col_2_3{width:73.66%;}/*main_content用*/
+
+/*----------------------------------------------------------------header*/
+
+#site_header{
+    position: relative;
+    margin: 35px 0 50px;
+}
+
+#site_header h1{
+    float: left;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 40px;
+    margin-left: 60px;
+}
+
+
+/*レスポンシブメニューハンバーガー*/
+#site_header .hamburger{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    padding: 40px 30px;
+    cursor: pointer;
+}
+
+#site_header .hamburger i{
+    display: block;
+    background-color: #666;
+    height: 2px;
+    margin-bottom: 4px;;
+}
+
+
+/*レスポンシブメニュー閉じるボタン*/
+#site_header .x_mark{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    padding: 40px 30px;
+    cursor: pointer;
+}
+
+#site_header .x_mark:before{
+    position: absolute;
+    top: 50%;
+    background-color: #666;
+    content:"";
+    display: block;
+    height: 20px;
+    width: 2px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#site_header .x_mark:after{
+    position: absolute;
+    top: 50%;
+    background-color: #666;
+    content:"";
+    display: block;
+    height: 20px;
+    width: 2px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+/*--nav--*/
+
+nav#menu{
+    float: right;
+}
+
+nav#menu li{
+	float: left;
+	line-height: 40px;
+	margin-right: 50px;
+	box-sizing: border-box;
+    font-size: 1em;
+	text-align: left;
+}
+
+nav#menu li:first-child{margin-left: 10px;}
+
+nav#menu li a{
+	display:block;
+	color: #666;
+}
+
+nav#menu li a:hover{
+    font-weight: bold;
+    transition:.2s ease-in;
+    transition: 0.2s;
+}
+
+/*nav#menu li:active{border:1px dotted #000;}*/
+
+#menu li a.on{text-decoration:line-through;}
+
+
+/*------------------------------------------------------------serach_shop_contents　エリアから探す*/
+
+#searchform{
+    float: right;
+    margin-right: 60px;
+}
+	
+#searchform input#s{/*検索情報入力フォーム*/
+    display: none;
+    height: 35px;
+    width: 250px;
+    padding-left: 8px;
+    font-size: 0.7em;
+    border-bottom: solid 1px #ccc;
+    box-sizing: border-box;
+    background:none;
+}
+	
+#searchform #searchsubmit{/*検索ボタン*/
+    position:relative;
+    float: right;
+    cursor: pointer;
+    height: 35px;
+    width: 40px;
+    border: none;
+    box-sizing: border-box;
+    padding: 0;/*buttonタグで自動付与されるため打ち消し*/
+    background-color: #fff;
+}
+
+#searchform svg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    fill: #666;
+    width: 15px;
+    height: 15px;
+}
+	
+#searchform #searchsubmit:hover{
+	transition: 0.2s;
+}
+
+/*検索結果*/
+.search_result h1{
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/*SVGマップ*/
+#svg_map_area{/*地図が入るエリア*/
+	position: relative;
+	height: 430px;
+	width: auto;
+	}
+
+#svg_map_area .svg_jp_map{/*日本地図全体の範囲*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	stroke: none;
+	fill: #f5f5f5;
+	width: 100%;
+	height:390px;
+    background-color: #ababab;
+    padding: 20px 0;
+}
+
+.map_text{font-size: 1.5em;}
+
+#svg_map_area a:visited{fill:#c7c7c7;}
+
+#svg_map_area a:hover{fill:#555;}
+
+
+/*スマホ用リスト*/
+
+#sp_list_area{
+    background-color: #f5f5f5;
+    border-radius: 7px;
+    margin: 15px 0 6%;
+}
+
+#sp_list_area ul li{
+    width: 50%;
+    float: left;
+}
+
+#sp_list_area ul li a{
+    display: block;
+    padding: 20px 0;
+    padding-left: 15px;
+}
+
+
+
+/*-------------------------------------------------------select_shop_area　ショップ地方一覧*/
+
+#select_shop_area{
+    background-color: #ababab;
+}
+
+#select_shop_area svg{
+    fill: #fff;
+    cursor:pointer;
+    width: 20px;
+    height: 11px;
+}
+
+#select_shop_area #pref_tabMenu{
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+#select_shop_area #pref_tabMenu div{
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+    line-height: 50px;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+#select_shop_area #pref_tabMenu div svg{
+    fill: #fff;
+    margin-left: 8px;
+    width: 10px;
+    height: 10px;
+}
+
+#select_shop_area #pref_tabBoxes{
+    width: 100%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    opacity: 0.9;
+}
+
+#select_shop_area #pref_tabBoxes li{
+    float: left;
+    font-size: 0.9em;
+    color: #aaa;/*投稿数ナンバリング*/
+    padding: 18px 10px;
+}
+
+#select_shop_area #pref_tabBoxes div {
+  display: none;
+}
+
+#select_shop_area #pref_tabBoxes div.active {
+  display: block;
+}
+
+#select_shop_area dd ul li a{color: #666;}/*エリア名*/
+
+#select_shop_area dd ul li a:hover{color: #ccc;}
+
+
+/*人気のエリアと人気の店舗と地方タイトル*/
+.sub_title_base{
+    margin: 65px 0 25px;
+    padding: 0 0 5px 5px;
+    border-bottom: solid 2px #ccc;
+}
+
+.sub_title_base h2{
+    color: #999;
+    text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/*ページャー*/
+.screen-reader-text{display: none;}
+
+
+/*--------------popular_area　人気のエリア*/
+
+#popular_area{
+    margin-bottom: 6%;
+}
+
+/*--------------popular_shop 人気の店舗*/
+
+#popular_shop{
+    margin-bottom: 6%;
+}
+
+#popular_shop ul li{margin-bottom: 8px;}
+
+/*------------------------------------------------------------　shop_posts_area ショップ記事一覧ページ*/
+
+/*パンくずリスト*/
+.breadcrumbs{
+    font-size: 0.7em;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+.breadcrumbs span{margin: 0 3px;}
+
+.breadcrumbs span:first-child{margin-left: 0;}
+
+/*------------------*/
+
+#shop_posts_area{
+}
+
+#shop_posts_area article{/*アーカイブ記事*/
+    margin: 10px 0 30px;
+}
+	
+.tag_text{
+    color: #666;
+    font-weight: bold;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.cat_text{
+    color: #666;
+	text-align: center;
+	margin-bottom: 40px;
+}
+		
+#shop_posts_area .thumbnail{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+#shop_posts_area .thumbnail:hover{
+    background-color: #ebebeb;
+    transition:.2s ease-in;
+}
+
+#shop_posts_area table{
+    margin:0 auto;
+    padding-top: 8px;
+}
+
+#shop_posts_area table td{
+	font-size:0.8em;
+	padding-top:9px;
+	text-align:center;
+}
+
+/*インスタアイコンとテキスト位置調整*/
+#shop_posts_area .info_link_area{
+	display:table;
+	margin:0 auto;
+	}
+
+#shop_posts_area .insta_area{padding:0 0 0 28px;}
+
+.icon_insta{
+    fill:#666;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 5px;
+}
+
+.link_none{fill:#ebebeb;}/*リンクなしインスタリンク*/
+
+/*-------------------------------------------------------------shop_article ショップ個別記事*/
+
+
+
+.shop_article h1{
+	color: #666;
+    text-align: center;
+	font-size: 1em;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.shop_article h4{
+	color: #666;
+	text-align: left;
+	font-size: 1.05em;
+    font-weight: bold;
+    border-bottom: solid 2px #ccc;
+    padding-bottom: 7px;
+	margin: 40px 0 20px 0;
+}
+
+.shop_article .entry_body{
+    display: flex;/*ショップ記事メイン画像中央配置*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;/*画像著作権表記用*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 60px 100px 40px;
+    background-color: #f5f5f5;
+    margin-bottom: 60px;
+}
+
+.shop_article img{/*画像ホバー時のopacity打ち消し*/
+    text-align: center;
+    opacity: 1;
+}
+	
+.shop_article .entry_body p{/*画像pタグ出力されるので打ち消し*/
+    margin: 0;
+    line-height: 0;
+}
+
+.shop_article span{/*画像著作権表記*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.7em;
+    margin: 3px;
+/*
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+*/
+}
+
+#quote{
+    -webkit-writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: tb-rl;
+}
+
+/*取扱いブランド*/
+
+.brand_tag li{
+    display: inline-block;
+    margin: 0 13px 10px 0;
+    background-color: #eee;
+}
+
+.brand_tag li a{
+    font-size: 0.9em;
+    line-height: 25px;
+    padding: 0 10px;
+}
+
+.brand_tag li a:before{
+    content: "#";
+    margin-right: 3px;
+}
+
+
+/*関連記事*/
+.shop_article #shop_posts_area article{
+    margin: 10px 0 0 0;
+}
+
+
+/*-------------------------------------------------------------Ranking ランキング*/
+
+
+#ranking_area{}
+
+#ranking_area .wpp-thumbnail {
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+#ranking_area .wpp-list {
+  counter-reset: ranking;
+  list-style-type: none;
+}
+
+#ranking_area .wpp-list li {
+    position: relative;
+    color: #666;
+    margin: 10px 35px 10px;
+}
+
+#ranking_area .wpp-list li:hover{
+	opacity: 0.7;
+	transition:.2s ease-in;
+}
+
+#ranking_area .wpp-list li:before {/*ランキングナンバリング*/
+    counter-increment: ranking;
+    content: counter(ranking);
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    z-index: 1;
+    color: #000;
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 22px;
+    width: 23px;
+    height: 23px; 
+}
+
+#ranking_area .wpp-post-title{
+    display: block;
+    font-size: 0.8em;
+    padding: 12px 0 20px;
+}
+
+	
+/*------------------------------------------------------------gallery_contents　ギャラリーページ*/
+
+
+#gallery_content{}
+
+#gallery_content h3{
+	font-size: 0.8em;
+    text-align: center;
+	color: #000;
+	margin-top: 14px;
+}
+	
+#gallery_content ul li{
+    float: left;
+    margin-bottom: 55px;
+}
+
+#shop_thumbnail{
+    width: 100%;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f5f5f5;
+/*    border: solid 1px #ccc;*/
+}
+
+/*------------------------------------------------------------ brand_content　ブランド一覧ページ*/
+
+#brand_menu{
+    background-color: #ababab;
+    margin-bottom: 55px;
+}
+
+#brand_menu ul li{
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    width: 16.66%;
+}
+
+#brand_menu ul li a{
+    font-size: 0.95em;
+    color: #fff;
+}
+
+
+#brand_content{
+}
+
+#brand_content article{
+    float: left;
+    margin-bottom: 33px;
+}
+
+#brand_content article .thumbnail{
+    padding: 30px 40px;
+    background-color: #f5f5f5;
+}
+
+#brand_content .tarm_text{
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#brand_content table{margin:0 auto;}
+	
+#brand_content table td{
+	font-size:0.8em;
+	padding:10px 0 0 0;
+	text-align:center;
+}
+
+#brand_content table td p{
+    margin: 0;
+}
+
+
+/*-------------------------------------------------------------contact　お問い合わせページ*/
+
+form.wpcf7-form{
+    background-color: #f5f5f5;
+    padding: 4%;
+}
+
+#wp-cf7{
+    padding: 15px 100px;
+    background-color: #fff;
+}
+
+#wp-cf7 .cf7-party{/*タイトルとエリア*/
+    margin-top: 50px;
+}
+
+#wp-cf7 .cf7-title{/*入力項目タイトル*/
+    float: left;
+    width: 20%;
+    color: #000;
+    padding: 10px 0 10px 13px;
+    box-sizing: border-box;
+}
+
+#wp-cf7 .cf7-text{/*入力エリア全て*/
+    float: left;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+#wp-cf7 .wpcf7-form-control{/*入力エリア全て*/
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#wp-cf7 input{border-bottom: solid 2px #ccc;}/*テキスト*/
+
+#wp-cf7 select{/*セレクトボックス*/
+    border: none;
+    border-bottom: solid 2px #ccc;
+}
+
+#wp-cf7 textarea {border: solid 2px #ccc;}/*メッセージエリア*/
+
+
+#wp-cf7 .cf7_policy{/*利用規約*/
+	height: 200px;
+	overflow: auto;
+	box-sizing: border-box;
+	background-color: #fff;
+	padding: 10px;
+        margin-bottom: 15px;
+}
+
+#wp-cf7 .wpcf7-acceptance{
+	width:auto;}/*利用規約同意チェックボックス*/
+
+#wp-cf7 .wpcf7-recaptcha {/*reCAPTCHA*/
+	width: 302px;
+    padding: 0;
+	margin: 30px auto 0;
+}
+
+#wp-cf7 .cf7-button{/*送信ボタン配置エリア*/
+    clear:both;
+    text-align: center;
+}
+
+#wp-cf7 .wpcf7-submit{/*送信ボタン*/
+    width: 150px;
+    cursor: pointer;
+    margin-top: 50px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+}
+
+#wp-cf7 .wpcf7-submit:hover{
+	transition:.2s ease-in;
+	background-color:#000;
+}
+
+#wp-cf7 .wpcf7-not-valid-tip{/*エラーメッセージ「必須項目に入力してください。」*/
+    float: right;
+    width: 100%;
+    margin-top: 5px;
+}
+
+div.wpcf7-response-output {/*エラーメッセージ「入力内容に問題があります。確認して再度お試しください。」*/
+    margin: 0 !important;
+    background-color: #fff;
+}
+
+/*-------------------------------------------------------------footer　フッター*/
+
+#push{height:270px; }/*フッターの高さ確保*/
+
+.page_top_svg{
+    width: 17px;
+	height: 17px;
+	fill: #ababab;
+    padding: 30px;
+	margin-left: 8%;
+	}
+
+#site_footer{
+    position:absolute;
+    bottom:0;
+	height:auto;
+	width: 100%;
+}
+
+#site_footer p{
+	font-size: 0.9em;
+	color: #666;
+	padding-top: 50px;
+	text-align: center;
+}
+
+
+
+/*-------------------------------------------------------------レスポンシブ
+------------------------------------------------------------------------*/
+
+
+@media screen and (max-width:909px){/*画面幅が909px以下の時にだけ効く指定を記述*/
+    
+    #site_header{margin: 0;}
+    
+    #site_header h1{
+        line-height: 0;
+        margin: 0;
+        padding: 40px 30px;
+    }
+    
+    .col_2_3{width: 100%;}/*トップページとブランドページ*/
+    
+    .col_1_3{width: 49.6%;}/*ギャラリーページ（元は33.33%）*/
+    
+    
+    /*searchform 検索ホーム*/
+    #pc_searchform{display: none;}
+    
+     #searchform{
+        float: none;
+        text-align: center;
+        margin: 50px 0 0 0;/*打ち消し兼ねる*/
+    }
+    
+    #searchform input#s{/*検索情報入力フォーム*/
+        display: inline-block;
+        width: 80%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    #searchform #searchsubmit {/*検索ボタン*/
+        display: inline-block;
+        float: none;
+    }
+    
+    
+    /*--nav--*/
+    
+    #sp_navArea{
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 9999;
+        padding: 5% 50px 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+    
+    nav#menu{float: none;}
+
+    nav#menu li{
+        width: 100%;
+        line-height: 80px;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 1em;
+    }
+
+    nav#menu li:last-child{margin-bottom: 50px;}/*打ち消し兼ねる*/
+
+    nav#menu li a{
+        display:block;
+        text-align: center;
+        color: #666;
+    }
+
+    nav#menu li a:hover{
+        font-weight: bold;
+        transition:.2s ease-in;
+        transition: 0.2s;
+    }
+
+    /*nav#menu li:active{border:1px dotted #000;}*/
+    
+    
+    /*------------------------------------------------------------ brand_content　ブランド一覧ページ*/
+    
+
+}    
+
+
+@media screen and (min-width:909px){/*画面幅が909px以上の時にだけ効く指定を記述*/
+    
+    #site_header .hamburger{display: none;}
+    
+    #site_header .x_mark{display: none;}
+    
+    #sp_searchform{display: none;}
+    
+}
+
+
+
+@media screen and (max-width:615px){/*画面幅が615px以下の時にだけ効く指定を記述*/
+    
+    main{
+        padding: 55px 30px 30px 30px;
+    }
+    
+
+    .col_1_3{width: 100%;}/*ブレイクポイント*/
+    
+    .sp_wrap_neg{margin: 0 -30px;}
+    
+   #svg_map_area .svg_jp_map{/*日本地図全体の範囲*/
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 30px 30px;
+    }
+    
+    /*-------------------------------------------------------select_shop_area　ショップ地方一覧*/
+    
+    
+    #select_shop_area #pref_tabMenu{
+        display: block;
+        overflow-x: scroll;
+    }
+    
+    #select_shop_area #pref_tabMenu li{
+        width: 150px;
+    }
+    
+    
+    /*-------------------------------------------------------------shop_article ショップ個別記事*/
+    
+    .shop_article .entry_body{
+        padding: 30px 20px 30px;
+    }
+    
+    .shop_article h1{
+        margin-top: 30px;
+    }
+    
+    /*パンくずリスト*/
+    
+    .wrap_neg_bc{margin-left: 10px;}
+    
+    .shop_article .single_wrap_neg{margin: 0 -10px;}
+    
+    
+    /*------------------------------------------------------------ brand_content　ブランド一覧ページ*/
+    
+    #brand_menu ul li{
+        width: 33.33%;
+    }
+    
+    /*-------------------------------------------------------------contact　お問い合わせページ*/
+    
+    #wp-cf7 {
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    
+    form.wpcf7-form{
+        background-color: #fff;
+        padding: 0 25px;
+        margin: 0 -30px;
+    }
+    
+    #wp-cf7 .cf7-party{
+        margin-top: 25px;
+    }
+    
+    #wp-cf7 .cf7-title {/*入力項目タイトル*/
+        float: none;
+        width: 100%;
+    }
+    
+    #wp-cf7 .cf7-text{/*入力エリア全て*/
+        float: none;
+        width: 100%;
+    }
+    
+    #wp-cf7 .wpcf7-recaptcha {width: 302px;}/*上記による打消し防止*/
+    
+    #wp-cf7 .wpcf7-not-valid-tip {/*エラーメッセージ「必須項目に入力してください。」*/
+        float: none;
+        width: 100%;
+    }
+    
+    /*-------------------------------------------------------------footer　フッター*/
+
+    #push{height:250px; }/*フッターの高さ確保*/
+    
+    #site_footer ul li{margin: 0 5px;}/*フッターナビ*/
+    
+    #site_footer ul li a{font-size: 0.8em;}
+    
+}
+
+@media screen and (min-width:615px){/*画面幅が615px以上の時にだけ効く指定を記述*/
+    
+  
+}
