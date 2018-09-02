@@ -1,7 +1,5 @@
 # Directory
-`
-test
-test
+```
 .
 ├── README.md
 ├── gulpfile.js
@@ -55,4 +53,4 @@ test
 └── src
     └── sass
         └── style.sass
-`
+```
