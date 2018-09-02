@@ -1,5 +1,7 @@
 # Directory
 `
+test
+test
 .
 ├── README.md
 ├── gulpfile.js
@@ -44,30 +46,7 @@
 │   ├── svg-defs.svg
 │   ├── tag.php
 │   ├── taxonomy-brand_cat-fashion.php
-│   ├── taxonomy-brand p_cat-foods.php
-bootstrap/
-├── css/
-│   ├── bootstrap-grid.css
-│   ├── bootstrap-grid.css.map
-│   ├── bootstrap-grid.min.css
-│   ├── bootstrap-grid.min.css.map
-│   ├── bootstrap-reboot.css
-│   ├── bootstrap-reboot.css.map
-│   ├── bootstrap-reboot.min.css
-│   ├── bootstrap-reboot.min.css.map
-│   ├── bootstrap.css
-│   ├── bootstrap.css.map
-│   ├ bootstrap.min.css
-│   └── bootstrap.min.css.map
-└── js/
-    ├── bootstrap.bundle.js
-    ├── bootstrap.bundle.js.map
-    ├── bootstrap.bundle.min.js
-    ├── bootstrap.bundle.min.js.map
-    ├── bootstrap.js
-    ├── bootstrap.js.map
-    ├── bootstrap.min.js
-    └── bootstrap.min.js.map
+│   ├── taxonomy-brand_cat-foods.php
 │   ├── taxonomy-brand_cat-goods.php
 │   ├── taxonomy-brand_cat-health-care.php
 │   ├── taxonomy-brand_cat-interior.php
